@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults autowire="false" autoconfigure="false" public="false" />
+
+        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\ExceptionDescribersQueue">
+            <argument type="collection"/>
+        </service>
+        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\PreconfiguredExceptionsDescriber">
+            <argument type="collection"/>
+        </service>
+        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\SymfonyExceptionDescriber">
+            <argument type="collection"/>
+        </service>
+        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\DescriptiveExceptionDescriber" />
+
+        <service id="Faecie\Bundle\JsonApiErrorsBundle\SerializerHandler\JmsExceptionNormalizer">
+            <argument type="service" id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\ExceptionDescribersQueue" />
+
+            <tag name="jms_serializer.subscribing_handler" />
+        </service>
+    </services>
+</container>
