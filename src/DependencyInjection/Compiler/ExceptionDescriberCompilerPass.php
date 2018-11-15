@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\DependencyInjection\Compiler;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\Compiler;
 
-use Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\DescriptiveExceptionDescriber;
-use Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\ExceptionDescriberInterface;
-use Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\ExceptionDescribersQueue;
-use Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\SymfonyExceptionDescriber;
+use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\DescriptiveExceptionDescriber;
+use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescriberInterface;
+use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescribersQueue;
+use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\SymfonyExceptionDescriber;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;

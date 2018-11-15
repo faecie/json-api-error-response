@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle;
 
-use Faecie\Bundle\JsonApiErrorsBundle\DependencyInjection\Compiler\RemoveOverwrittenServicesCompilerPass;
-use Faecie\Bundle\JsonApiErrorsBundle\DependencyInjection\Compiler\ExceptionDescriberCompilerPass;
+use Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\Compiler\RemoveOverwrittenServicesCompilerPass;
+use Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\Compiler\ExceptionDescriberCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class JsonApiErrorsBundle extends Bundle
+class JsonApiErrorsResponseBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

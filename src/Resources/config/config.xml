@@ -6,19 +6,19 @@
     <services>
         <defaults autowire="false" autoconfigure="false" public="false" />
 
-        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\ExceptionDescribersQueue">
+        <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescribersQueue">
             <argument type="collection"/>
         </service>
-        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\PreconfiguredExceptionsDescriber">
+        <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\PreconfiguredExceptionsDescriber">
             <argument type="collection"/>
         </service>
-        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\SymfonyExceptionDescriber">
+        <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\SymfonyExceptionDescriber">
             <argument type="collection"/>
         </service>
-        <service id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\DescriptiveExceptionDescriber" />
+        <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\DescriptiveExceptionDescriber" />
 
-        <service id="Faecie\Bundle\JsonApiErrorsBundle\SerializerHandler\JmsExceptionNormalizer">
-            <argument type="service" id="Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\ExceptionDescribersQueue" />
+        <service id="Faecie\Bundle\JsonApiErrorResponseBundle\SerializerHandler\JmsExceptionNormalizer">
+            <argument type="service" id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescribersQueue" />
 
             <tag name="jms_serializer.subscribing_handler" />
         </service>

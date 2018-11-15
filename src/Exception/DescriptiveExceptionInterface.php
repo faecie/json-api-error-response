@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\Exception;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\Exception;
 
-use Faecie\Bundle\JsonApiErrorsBundle\JsonApi\Error;
+use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi\Error;
 use Throwable;
 
 interface DescriptiveExceptionInterface extends Throwable

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\JsonApi;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi;
 
 class ErrorLinks
 {

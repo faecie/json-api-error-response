@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -27,8 +27,8 @@ use Symfony\Component\Security\Core\Exception\SessionUnavailableException;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
-use Faecie\Bundle\JsonApiErrorsBundle\Enum\ErrorCodesEnum;
-use Faecie\Bundle\JsonApiErrorsBundle\JsonApi\Error;
+use Faecie\Bundle\JsonApiErrorResponseBundle\Enum\ErrorCodesEnum;
+use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi\Error;
 
 class SymfonyExceptionDescriber extends PreconfiguredExceptionsDescriber
 {

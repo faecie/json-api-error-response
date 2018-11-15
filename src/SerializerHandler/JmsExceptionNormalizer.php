@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\SerializerHandler;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\SerializerHandler;
 
 use Exception;
-use Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\ExceptionDescriberInterface;
+use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescriberInterface;
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\JsonSerializationVisitor;
-use Faecie\Bundle\JsonApiErrorsBundle\Enum\ErrorCodesEnum;
+use Faecie\Bundle\JsonApiErrorResponseBundle\Enum\ErrorCodesEnum;
 use Throwable;
 use Error;
-use Faecie\Bundle\JsonApiErrorsBundle\JsonApi\Error as  JsonApiError;
+use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi\Error as  JsonApiError;
 
 /**
  * Class JmsExceptionNormalizer

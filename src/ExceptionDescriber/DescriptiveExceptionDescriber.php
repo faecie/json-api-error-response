@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber;
 
-use Faecie\Bundle\JsonApiErrorsBundle\Exception\DescriptiveExceptionInterface;
+use Faecie\Bundle\JsonApiErrorResponseBundle\Exception\DescriptiveExceptionInterface;
 use Throwable;
 
 class DescriptiveExceptionDescriber implements ExceptionDescriberInterface

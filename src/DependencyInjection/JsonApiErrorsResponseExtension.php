@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\DependencyInjection;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection;
 
-use Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber\PreconfiguredExceptionsDescriber;
-use Faecie\Bundle\JsonApiErrorsBundle\JsonApi\Error;
+use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\PreconfiguredExceptionsDescriber;
+use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi\Error;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class JsonApiErrorsExtension extends Extension
+class JsonApiErrorsResponseExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {

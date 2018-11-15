@@ -1,28 +1,36 @@
 {
-    "name": "faecie/json-api-errors",
+    "name": "faecie/json-api-error-response",
     "type": "symfony-bundle",
-    "description": "This Bundle provides en error response as it described in JsonApi specification",
-    "keywords": ["jsonapi", "rest", "errors"],
+    "description": "The Bundle provides en error response as it described in JsonApi specification",
+    "keywords": [
+      "jsonapi",
+      "rest",
+      "fosrest",
+      "jmsserializer"
+    ],
     "license": "MIT",
     "authors": [
         {
-            "name": "Umyarov Ruslan Ryashitovich",
+            "name": "Umyarov Ruslan",
             "email": "umyarovrr@gmail.com"
         }
     ],
     "autoload":{
         "psr-4":{
-            "Faecie\\Bundle\\JsonApiErrorsBundle\\": "src"
+            "Faecie\\Bundle\\JsonApiErrorResponseBundle\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Faecie\\Bundle\\JsonApiErrorsBundle\\Test\\": "tests"
+            "Faecie\\Bundle\\JsonApiErrorResponseBundle\\Test\\": "tests"
         }
     },
     "require": {
         "friendsofsymfony/rest-bundle": "^2.3",
         "symfony/config": "^4.1",
         "jms/serializer": "^1.13"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
     }
 }

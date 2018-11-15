@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\ExceptionDescriber;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber;
 
 use Throwable;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\DependencyInjection\Compiler;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

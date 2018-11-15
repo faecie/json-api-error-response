@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faecie\Bundle\JsonApiErrorsBundle\DependencyInjection;
+namespace Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $tree = new TreeBuilder();
-        $root = $tree->root('json_api_errors');
+        $root = $tree->root('json_api_errors_response');
         $root
             ->children()
             ->append($this->createExceptionsNode())
@@ -53,7 +53,7 @@ class Configuration implements ConfigurationInterface
                             ->defaultNull()
                             ->info('A unique identifier for this particular occurrence of the problem')
                         ->end()
-                        ->scalarNode(self::EXCEPTION_ATTRIBUTE_ID)
+                        ->scalarNode(self::EXCEPTION_ATTRIBUTE_ABOUT)
                             ->defaultNull()
                             ->info('A link that leads to further details' .
                                 ' about this particular occurrence of the problem.')
