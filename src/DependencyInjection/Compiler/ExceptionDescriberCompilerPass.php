@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\Compiler;
 
@@ -25,12 +25,13 @@ class ExceptionDescriberCompilerPass implements CompilerPassInterface
 
     public function process(ContainerBuilder $container)
     {
+        $references = [];
         $references[] = new Reference(DescriptiveExceptionDescriber::class);
         foreach ($container->findTaggedServiceIds(self::TAG_NAME) as $serviceId => $tagsAttributes) {
             $definition = $container->findDefinition($serviceId);
             $class = $definition->getClass();
             $implements = class_implements($definition->getClass());
-            if (!isset($implements[ExceptionDescriberInterface::class])) {
+            if (! isset($implements[ExceptionDescriberInterface::class])) {
                 throw new InvalidArgumentException(
                     sprintf(
                         'Service "%s" with class "%s" must implement interface "%s"',

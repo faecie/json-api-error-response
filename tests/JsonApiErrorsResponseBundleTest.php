@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Faecie\Bundle\JsonApiErrorResponseBundle\Test;
 
-use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApiErrorsResponseBundle;
+use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApiErrorResponseBundle;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -12,7 +12,7 @@ class JsonApiErrorsResponseBundleTest extends TestCase
 {
     public function testBuild(): void
     {
-        $bundle = new JsonApiErrorsResponseBundle();
+        $bundle = new JsonApiErrorResponseBundle();
         $containerMock = $this->getMockBuilder(ContainerBuilder::class)
             ->disableOriginalConstructor()
             ->getMock();

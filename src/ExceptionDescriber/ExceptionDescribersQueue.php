@@ -23,7 +23,7 @@ class ExceptionDescribersQueue implements ExceptionDescriberInterface
         foreach ($this->describersQueue as $describer) {
             $result = $describer->extractErrors($exception);
 
-            if ($result) {
+            if (! empty($result)) {
                 return $result;
             }
         }

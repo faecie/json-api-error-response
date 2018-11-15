@@ -8,12 +8,12 @@ use Error;
 use Exception;
 use Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\Compiler\ExceptionDescriberCompilerPass;
 use Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\Configuration;
-use Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\JsonApiErrorsResponseExtension;
+use Faecie\Bundle\JsonApiErrorResponseBundle\DependencyInjection\JsonApiErrorResponseExtension;
 use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\DescriptiveExceptionDescriber;
 use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescribersQueue;
 use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\PreconfiguredExceptionsDescriber;
 use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\SymfonyExceptionDescriber;
-use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApiErrorsResponseBundle;
+use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApiErrorResponseBundle;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -23,7 +23,7 @@ class JsonApiErrorsResponseExtensionTest extends TestCase
     public function testExceptionsConfigurationLOaded()
     {
         $container = $this->getRawContainer();
-        $container->loadFromExtension('json_api_errors_response', [
+        $container->loadFromExtension('json_api_error_response', [
             'exceptions' => [
                 'response' => [
                     Exception::class => [
@@ -46,7 +46,7 @@ class JsonApiErrorsResponseExtensionTest extends TestCase
     public function testAllDescribersAddedToQueue(): void
     {
         $container = $this->getRawContainer();
-        $container->loadFromExtension('json_api_errors_response', []);
+        $container->loadFromExtension('json_api_error_response', []);
 
         $definition = new Definition(PreconfiguredExceptionsDescriber::class, [[]]);
         $definition->addTag(ExceptionDescriberCompilerPass::TAG_NAME);
@@ -78,7 +78,7 @@ class JsonApiErrorsResponseExtensionTest extends TestCase
     public function testWrongButTaggedDescribersNotAddedToQueue(): void
     {
         $container = $this->getRawContainer();
-        $container->loadFromExtension('json_api_errors_response', []);
+        $container->loadFromExtension('json_api_error_response', []);
 
         $definition = new Definition(Exception::class);
         $definition->addTag(ExceptionDescriberCompilerPass::TAG_NAME);
@@ -90,10 +90,10 @@ class JsonApiErrorsResponseExtensionTest extends TestCase
     protected function getRawContainer(): ContainerBuilder
     {
         $container = new ContainerBuilder();
-        $security = new JsonApiErrorsResponseExtension();
+        $security = new JsonApiErrorResponseExtension();
         $container->registerExtension($security);
 
-        $bundle = new JsonApiErrorsResponseBundle();
+        $bundle = new JsonApiErrorResponseBundle();
         $bundle->build($container);
 
         $container->getCompilerPassConfig()->setOptimizationPasses([]);

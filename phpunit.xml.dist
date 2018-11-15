@@ -8,9 +8,9 @@
         convertWarningsToExceptions="true"
         processIsolation="false"
         stopOnFailure="false"
-        bootstrap="Tests/bootstrap.php">
+        bootstrap="tests/bootstrap.php">
     <testsuites>
-        <testsuite name="JsonApiErrorsResponseBundle Test Suite">
+        <testsuite name="JsonApiErrorResponseResponseBundle Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
