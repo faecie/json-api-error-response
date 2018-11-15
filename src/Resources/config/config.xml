@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<container xmlns="http://symfony.com/schema/dic/services"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://symfony.com/schema/dic/services"
            xsi:schemaLocation="http://symfony.com/schema/dic/services
         http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <defaults autowire="false" autoconfigure="false" public="false" />
+        <defaults autowire="false" autoconfigure="false" public="false"/>
 
         <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescribersQueue">
             <argument type="collection"/>
@@ -15,12 +15,13 @@
         <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\SymfonyExceptionDescriber">
             <argument type="collection"/>
         </service>
-        <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\DescriptiveExceptionDescriber" />
+        <service id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\DescriptiveExceptionDescriber"/>
 
         <service id="Faecie\Bundle\JsonApiErrorResponseBundle\SerializerHandler\JmsExceptionNormalizer">
-            <argument type="service" id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescribersQueue" />
+            <argument type="service"
+                      id="Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescribersQueue"/>
 
-            <tag name="jms_serializer.subscribing_handler" />
+            <tag name="jms_serializer.subscribing_handler"/>
         </service>
     </services>
 </container>

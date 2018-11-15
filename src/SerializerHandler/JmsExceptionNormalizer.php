@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Faecie\Bundle\JsonApiErrorResponseBundle\SerializerHandler;
 
+use Error;
 use Exception;
+use Faecie\Bundle\JsonApiErrorResponseBundle\Enum\ErrorCodesEnum;
 use Faecie\Bundle\JsonApiErrorResponseBundle\ExceptionDescriber\ExceptionDescriberInterface;
+use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi\Error as JsonApiError;
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\JsonSerializationVisitor;
-use Faecie\Bundle\JsonApiErrorResponseBundle\Enum\ErrorCodesEnum;
 use Throwable;
-use Error;
-use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi\Error as  JsonApiError;
 
 /**
  * Class JmsExceptionNormalizer
@@ -21,6 +21,11 @@ use Faecie\Bundle\JsonApiErrorResponseBundle\JsonApi\Error as  JsonApiError;
 class JmsExceptionNormalizer implements SubscribingHandlerInterface
 {
     private $exceptionDescriber;
+
+    public function __construct(ExceptionDescriberInterface $describer)
+    {
+        $this->exceptionDescriber = $describer;
+    }
 
     public static function getSubscribingMethods()
     {
@@ -38,11 +43,6 @@ class JmsExceptionNormalizer implements SubscribingHandlerInterface
                 'method' => 'serializeToJson',
             ],
         ];
-    }
-
-    public function __construct(ExceptionDescriberInterface $describer)
-    {
-        $this->exceptionDescriber = $describer;
     }
 
     public function serializeToJson(
