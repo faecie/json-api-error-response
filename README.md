@@ -12,7 +12,7 @@ Perfectly works along with FOS REST bundle configured to json response. OIn this
 # Installation
 
 ```console
-$ composer require faecie/json-api-error-response ^0.1.0
+$ composer require faecie/json-api-error-response ^0.1
 ```
 # Configuration
 You can configure the response of your exception in different ways:
