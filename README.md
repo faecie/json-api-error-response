@@ -16,6 +16,6 @@ $ composer require faecie/json-api-error-response ^0.1
 ```
 # Configuration
 You can configure the response of your exception in different ways:
- 1. Implement interface `DescriptiveExceptionInterface` on your  ezxception with only one method returning the array of Error objects
+ 1. Implement interface `DescriptiveExceptionInterface` on your  exception with only one method returning the array of Error objects
  2. Configure each exception class in the bandle configuration
  3. Tag you service as `json_api.exception_describer` and implement `ExceptionDescriberInterface` on it with only one method allowing you to control how to serialize your exceptions 
